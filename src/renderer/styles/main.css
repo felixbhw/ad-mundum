@@ -1,0 +1,144 @@
+/* Main layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Toolbar */
+#toolbar {
+    height: 40px;
+    background: #2c3e50;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.tool-group {
+    display: flex;
+    gap: 10px;
+}
+
+#toolbar button {
+    background: #34495e;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#toolbar button:hover {
+    background: #3498db;
+}
+
+/* Main content area */
+#main-content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 300px;
+    background: #f5f6fa;
+    border-right: 1px solid #dcdde1;
+    overflow-y: auto;
+}
+
+.panel-content {
+    padding: 15px;
+}
+
+.panel-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Map container */
+#map-container {
+    flex: 1;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Query panel */
+#query-input {
+    width: 100%;
+    height: 150px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#run-query {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#run-query:hover {
+    background: #27ae60;
+}
+
+/* Layer list */
+#layer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.layer-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: white;
+    border: 1px solid #dcdde1;
+    border-radius: 4px;
+}
+
+.layer-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Editor tools */
+#editor-tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.editor-tool {
+    padding: 8px;
+    text-align: center;
+    background: white;
+    border: 1px solid #dcdde1;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.editor-tool:hover {
+    background: #f1f2f6;
+} 

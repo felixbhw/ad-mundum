@@ -2,6 +2,47 @@
 
 Ad Mundum is a cross-platform Electron-based desktop application that unifies the best mapping and historical data tools from the OpenHistoricalMap (OHM) ecosystem. Designed with academic research and historical geographic analysis in mind, it brings together interactive mapping, comprehensive layer management, robust querying, and editing capabilities into one cohesive experience.
 
+## Current Implementation Status
+
+### Core Features
+
+#### ✅ Implemented
+- Basic Electron application structure
+- Main process and renderer process setup
+- Interactive map display using Leaflet
+- Basic UI layout with toolbar and panels
+- Panel switching (Layers, Query, Editor)
+- Keyboard shortcuts (Ctrl+L, Ctrl+Q, Ctrl+E)
+- Basic state persistence using electron-store
+- Window management and app lifecycle
+
+#### 🚧 Partially Implemented (Stubbed)
+- Layer Management:
+  - UI for layer toggling
+  - Basic layer list display
+  - Layer addition/removal hooks
+  
+- Query Interface:
+  - Query input panel
+  - Example query loading
+  - Query execution workflow
+  
+- Editor Tools:
+  - Basic editing toolbar
+  - Tool selection interface
+  - Editor mode toggle
+
+#### ⏳ Planned/TODO
+- Full OHM Layer Index Integration
+- Complete Overpass Turbo Integration
+- iD Editor Integration
+- Advanced Layer Controls
+- Query Result Display
+- Feature Editing Tools
+- Data Export/Import
+- Settings Management
+- Plugin System
+
 ## Overview
 
 Ad Mundum leverages code from multiple OHM repositories while adding custom integrations and desktop-specific functionality. The OHM repository (located in the `OpenHistoricalMap/` folder) contains detailed implementations and documentation for each component. This folder (`ad-mundum/`) holds the application-specific code that ties together those components using Electron.
@@ -49,49 +90,122 @@ For more in-depth details on each repository's functionality, please refer to th
 
 ## Getting Started
 
-1. **Clone the Repositories:**  
-   Ensure both the `OpenHistoricalMap/` repository (with core tools and libraries) and the `ad-mundum/` repository (for app-specific code) are cloned.
+### Prerequisites
+- Node.js (v14 or later)
+- npm or yarn
+- Git
 
-2. **Install Dependencies:**  
-   Navigate to the `ad-mundum/` folder and install your dependencies:
-   ```bash
-   npm install
-   ```
-   or
-   ```bash
-   yarn
-   ```
+### Installation
 
-3. **Run the Application:**  
-   Launch the app in development mode via Electron:
-   ```bash
-   npm start
-   ```
-   or
-   ```bash
-   yarn start
-   ```
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/ad-mundum.git
+cd ad-mundum
+```
 
-4. **Build for Production:**  
-   Package the application for your target platforms using Electron Builder or another packaging tool.
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the application:
+```bash
+npm start
+# or
+yarn start
+```
+
+### Development Mode
+To run the application in development mode with DevTools:
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+## Project Structure
+
+```
+ad-mundum/
+├── src/
+│   ├── main/
+│   │   └── main.js           # Main Electron process
+│   ├── renderer/
+│   │   ├── components/
+│   │   │   ├── app.js        # Main application logic
+│   │   │   ├── map.js        # Map management
+│   │   │   ├── layers.js     # Layer management
+│   │   │   ├── query.js      # Query interface
+│   │   │   └── editor.js     # Editor tools
+│   │   ├── styles/
+│   │   │   └── main.css      # Application styles
+│   │   └── index.html        # Main application window
+│   ├── shared/               # Shared utilities
+│   └── ohm-integration/      # OHM-specific integration code
+├── package.json
+└── README.md
+```
+
+## Current Limitations and Known Issues
+
+1. **Layer Management**
+   - Historical map layers are currently stubbed
+   - Layer persistence is basic
+   - No layer opacity control
+
+2. **Query System**
+   - Overpass integration is stubbed
+   - Query results are not displayed on map
+   - No query history
+
+3. **Editor**
+   - Basic UI only
+   - No actual editing capabilities yet
+   - iD Editor integration pending
+
+## Development Roadmap
+
+### Phase 1 (Current)
+- ✅ Basic application structure
+- ✅ Map display
+- ✅ UI framework
+- 🚧 Basic layer management
+
+### Phase 2 (Next)
+- Full layer index integration
+- Overpass query system
+- Result display on map
+- Layer controls
+
+### Phase 3
+- iD Editor integration
+- Feature editing
+- Data persistence
+- Export/Import
+
+### Phase 4
+- Plugin system
+- Settings management
+- Advanced features
+- Performance optimization
 
 ## Contributing
 
-- **Code Guidelines:**  
-  Follow the standards laid out in the .cursorrules file. Reuse and adapt existing code from the OHM repositories whenever possible.
-  
-- **Clear and Complete:**  
-  Ensure that functions are fully implemented before moving on, and keep the code concise and well-documented.
-  
-- **Modular Design:**  
-  Maintain a clean separation between the core OHM functionality and application-specific customizations.
-
-## Additional Resources
-
-- [Electron Documentation](https://www.electronjs.org/docs)  
-- [OpenHistoricalMap Wiki](https://wiki.openhistoricalmap.org/)  
-- For detailed repository-specific info, consult the README files within the `OpenHistoricalMap/` folder.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-Include your project license details here. Ad Mundum integrates several open-source components, so ensure all third-party licenses are properly maintained and attributed.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- OpenHistoricalMap project and contributors
+- Leaflet mapping library
+- Electron framework
+- iD Editor project

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ad Mundum - Historical Map Explorer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="app">
+        <div id="toolbar">
+            <div class="tool-group">
+                <button id="layerToggle">Layers</button>
+                <button id="queryBuilder">Query</button>
+                <button id="editor">Editor</button>
+            </div>
+        </div>
+        
+        <div id="main-content">
+            <div id="sidebar" class="panel">
+                <!-- Layer panel -->
+                <div id="layer-panel" class="panel-content">
+                    <h3>Layers</h3>
+                    <div id="layer-list"></div>
+                </div>
+                
+                <!-- Query panel -->
+                <div id="query-panel" class="panel-content hidden">
+                    <h3>Query Builder</h3>
+                    <textarea id="query-input" placeholder="Enter Overpass query..."></textarea>
+                    <button id="run-query">Run Query</button>
+                </div>
+                
+                <!-- Editor panel -->
+                <div id="editor-panel" class="panel-content hidden">
+                    <h3>Map Editor</h3>
+                    <div id="editor-tools"></div>
+                </div>
+            </div>
+            
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="components/map.js"></script>
+    <script src="components/layers.js"></script>
+    <script src="components/query.js"></script>
+    <script src="components/editor.js"></script>
+    <script src="components/app.js"></script>
+</body>
+</html> 
